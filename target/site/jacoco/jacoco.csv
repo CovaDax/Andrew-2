@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Cycle-Detector,edu.fgcu.Cycle_Detector,CycleDetector,9,0,0,0,6,0,4,0,4,0
+Cycle-Detector,edu.fgcu.Cycle_Detector,DetectCircularDependency,7,0,0,0,3,0,2,0,2,0
+Cycle-Detector,edu.fgcu.Cycle_Detector,RecordCircularDependency,8,0,0,0,4,0,3,0,3,0
+Cycle-Detector,edu.fgcu.Cycle_Detector,C,8,0,0,0,3,0,1,0,1,0
+Cycle-Detector,edu.fgcu.Cycle_Detector,CircularDependency,4,0,0,0,3,0,2,0,2,0
+Cycle-Detector,edu.fgcu.Cycle_Detector,A,8,0,0,0,3,0,1,0,1,0
+Cycle-Detector,edu.fgcu.Cycle_Detector,B,8,0,0,0,3,0,1,0,1,0
