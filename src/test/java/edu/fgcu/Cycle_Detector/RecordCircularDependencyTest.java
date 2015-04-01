@@ -4,13 +4,13 @@ import org.junit.Test;
 
 public class RecordCircularDependencyTest {
 	
-	@Test
+	@Test(expected = RuntimeException.class)
 	public void testRecordCircularDependency() {
 		
 		 
 	}
 	
-	@Test
+	@Test(expected = RuntimeException.class)
 	public void testRecordClassInformation() {
 		
 		 

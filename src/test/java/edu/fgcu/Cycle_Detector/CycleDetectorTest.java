@@ -4,13 +4,13 @@ import org.junit.Test;
 
 public class CycleDetectorTest {
 	
-	@Test
+	@Test(expected = RuntimeException.class)
 	public void testDetectCycle() {
 		
 		 
 	}
 	
-	@Test
+	@Test(expected = RuntimeException.class)
 	public void testIsCycle() {
 		
 		 

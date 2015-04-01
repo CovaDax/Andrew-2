@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class DetectCircularDependencyTest {
 	
-	@Test
+	@Test(expected = RuntimeException.class)
 	public void testDetectCircularDependency() {
 		
 		 
