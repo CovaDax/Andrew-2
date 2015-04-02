@@ -11,15 +11,17 @@ import org.junit.Test;
 public class TestA {
 	
 	//private B b;
+	private A a;
 	
 	@Before
 	public void setup(){
-		//b = new B();
+		a = new A();
 	}
 	
 	@Test
 	public void testBCon(){
-		//B b = new B();
-		//assertEquals(this.b, b);
+		B b = new B();
+		a.setB(b);
+		assertEquals(a.getB(), b);
 	}
 }
