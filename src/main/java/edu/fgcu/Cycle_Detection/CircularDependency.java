@@ -7,7 +7,6 @@ public class CircularDependency {
 	@Inject
 	public CircularDependency() {
 		
-		
 	}
 	
 	public void IsCircularDependency() {
