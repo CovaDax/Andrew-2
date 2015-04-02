@@ -21,8 +21,10 @@ public class DetectCircularDependencyTest {
 	//by class name checks to see that there IS a circular class dependency
 	@Test
 	public void testCheckCircularDependency(){
-		A testA = a.getB().getC().getA();
-		assertEquals(testA, a);
+		DetectCircularDependency dcd = new DetectCircularDependency(a,b,c);
+		A startA = dcd.checkForDependency();
+		A endA = startA.getB().getC().getA();
+		assertEquals(startA, endA);
 	}
 	
 	
