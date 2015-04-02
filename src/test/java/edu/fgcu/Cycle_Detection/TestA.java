@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class TestA {
 	
-	private B b;
+	//private B b;
 	
 	@Before
 	public void setup(){
