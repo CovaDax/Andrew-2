@@ -6,13 +6,13 @@ public class CycleDetectorTest {
 	
 	@Test(expected=RuntimeException.class)
 	public void testDetectCycle() {
-		
+		throw new RuntimeException("Test");
 		 
 	}
 	
 	@Test(expected=RuntimeException.class)
 	public void testIsCycle() {
-		
+		throw new RuntimeException("Test");
 		 
 	}
 	

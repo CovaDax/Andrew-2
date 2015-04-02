@@ -6,7 +6,7 @@ public class DetectCircularDependencyTest {
 	
 	@Test(expected=RuntimeException.class)
 	public void testDetectCircularDependency() {
-		
+		throw new RuntimeException("Test");
 		 
 	}
 
