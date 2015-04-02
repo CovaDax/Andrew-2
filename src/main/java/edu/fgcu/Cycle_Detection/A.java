@@ -7,6 +7,7 @@ public class A {
 	private String hello = "This is String A";
 
 	public A(){
+		//Causes infinite loop of object invokations
 		this.b = new B();
 	}
 }
