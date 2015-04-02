@@ -6,6 +6,13 @@ public class C {
 	private A a;
 
 	public C(){
-		this.a = new A();
+	}
+	
+	public void setA(A a){
+		this.a = a;
+	}
+	
+	public A getA(){
+		return this.a;
 	}
 }
