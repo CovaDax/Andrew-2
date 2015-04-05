@@ -10,13 +10,13 @@ public class TestB {
 	
 	@Before
 	public void setup(){
-		b = new B();
+		b = new B(0);
 	}
 	
 	@Test
 	public void testCCon(){
-		C c = new C();
-		b.setC(c);
-		assertEquals(b.getC(),c);
+		C c = new C(0);
+		b.setNext(c);
+		assertEquals(b.getNext(),c);
 	}
 }

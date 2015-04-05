@@ -3,17 +3,40 @@ package edu.fgcu.Cycle_Detection;
 
 public class A {
 	
-	private B b;
+	private int id;
+	private C last;
+	private B next;
 
-	public A(){
-		//Causes infinite loop of object invocations
+	public A(int id){
+		this.id = id;
 	}
 	
-	public void setB(B b){
-		this.b = b;
+	public A(int id, B next, C last){
+		this.id = id;
+		this.next = next;
+		this.last = last;
 	}
 	
-	public B getB(){
-		return this.b;
+	public int getId(){
+		return id;
+	}
+	
+	public void setId(int id){
+		this.id = id;
+	}
+	
+	public void setNext(B b){
+		next = b;
+	}
+	
+	public B getNext(){
+		return next;
+	}
+	
+	public void setLast(C c){
+		last = c;
+	}
+	public C getLast(){
+		return last;
 	}
 }
