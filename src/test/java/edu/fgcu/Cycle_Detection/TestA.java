@@ -8,6 +8,8 @@ import java.util.Random;
 import org.junit.Before;
 import org.junit.Test;
 
+//TestA
+
 public class TestA {
 	
 	//private B b;
