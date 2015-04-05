@@ -38,7 +38,7 @@ public class TestA {
 	}
 	
 	@Test
-	public void testGetLast(){
+	public void testSetLast(){
 		A a = new A(0);
 		C c= new C(0);
 		a.setLast(c);
@@ -46,7 +46,7 @@ public class TestA {
 	}
 
 	@Test
-	public void testGetNext(){
+	public void testSetNext(){
 		A a = new A(0);
 		B b = new B(0);
 		a.setNext(b);

@@ -39,7 +39,7 @@ public class TestB {
 	}
 	
 	@Test
-	public void testGetNext(){
+	public void testSetNext(){
 		B b = new B(0);
 		int id = new Random().nextInt();
 		b.setId(id);
@@ -47,7 +47,7 @@ public class TestB {
 	}
 	
 	@Test
-	public void testGetLast(){
+	public void testSetLast(){
 		B b = new B(0);
 		A last = new A(0);
 		b.setLast(last);
