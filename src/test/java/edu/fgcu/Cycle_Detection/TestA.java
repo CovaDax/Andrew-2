@@ -24,16 +24,11 @@ public class TestA {
 		B b = new B(id);
 		C c = new C(id);
 		assertEquals(a.getId(),id);
-		assertEquals(b.getId(),id);
-		assertEquals(c.getId(),id);
 
 		a.setNext(b);
 		a.setLast(c);
 		assertEquals(b, a.getNext());
 		assertEquals(c, a.getLast());
-		
-		assertEquals(a.getNext().getId(), id);
-		assertEquals(a.getLast().getId(), id);
 	}
 	
 	@Test
