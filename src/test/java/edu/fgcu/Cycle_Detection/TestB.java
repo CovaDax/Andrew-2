@@ -41,9 +41,9 @@ public class TestB {
 	@Test
 	public void testGetNext(){
 		B b = new B(0);
-		C next = new C(0);
-		b.setNext(next);
-		assertEquals(b.getNext(),next);
+		int id = new Random().nextInt();
+		b.setId(id);
+		assertEquals(b.getId(), id);
 	}
 	
 	@Test
