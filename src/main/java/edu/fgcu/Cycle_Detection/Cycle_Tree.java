@@ -32,14 +32,6 @@ public class Cycle_Tree {
 		
 	}
 	
-	public void insertNode(Object o){
-		A head = this.head;
-		while(head.getLast()!=null){
-			
-		}
-	}
-	
-	
 	public A getHead(){
 		return head;
 	}
