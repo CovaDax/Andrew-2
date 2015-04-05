@@ -26,8 +26,8 @@ public class TestA {
 		a.setNext(b);
 		a.setLast(c);
 		assertEquals(a.getId(),id);
-		assertEquals(b.getNext(),id);
-		assertEquals(c.getLast(),id);
+		assertEquals(b.getId(),id);
+		assertEquals(c.getId(),id);
 	}
 	
 	@Test
