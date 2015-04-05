@@ -18,14 +18,22 @@ public class TestA {
 	}
 	
 	@Test
-	public void testCon(){
+	public void testA(){
 		int id = new Random().nextInt();
-		B b = new B(0);
-		C c = new C(0);
+		A a = new A(id);
+		B b = new B(id);
+		C c = new C(id);
 		a.setNext(b);
 		a.setLast(c);
 		assertEquals(a.getId(),id);
 		assertEquals(a.getNext(),b);
 		assertEquals(a.getLast(),c);
+	}
+	
+	@Test
+	public void testSetId(){
+		int rand = new Random().nextInt();
+		A a = new A(rand);
+		assertEquals(a.getId(), rand);
 	}
 }
