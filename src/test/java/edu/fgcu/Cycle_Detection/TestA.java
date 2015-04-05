@@ -23,11 +23,41 @@ public class TestA {
 		A a = new A(id);
 		B b = new B(id);
 		C c = new C(id);
-		a.setNext(b);
-		a.setLast(c);
 		assertEquals(a.getId(),id);
 		assertEquals(b.getId(),id);
 		assertEquals(c.getId(),id);
+
+		a.setNext(b);
+		a.setLast(c);
+		assertEquals(b, a.getNext());
+		assertEquals(c, a.getLast());
+		
+		assertEquals(a.getNext().getId(), id);
+		assertEquals(a.getLast().getId(), id);
+	}
+	
+	@Test
+	public void getId(){
+		A a = new A(0);
+		int id = new Random().nextInt();
+		a.setId(id);
+		assertEquals(a.getId(),id);
+	}
+	
+	@Test
+	public void testGetLast(){
+		A a = new A(0);
+		C c= new C(0);
+		a.setLast(c);
+		assertEquals(a.getLast(),c);
+	}
+
+	@Test
+	public void testGetNext(){
+		A a = new A(0);
+		B b = new B(0);
+		a.setNext(b);
+		assertEquals(a.getNext(),b);
 	}
 	
 	@Test
