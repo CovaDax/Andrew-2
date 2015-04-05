@@ -17,7 +17,7 @@ public class Cycle_Tree_Test {
 	
 	@Test
 	public void testTreeMade(){
-		int rand = new Random().nextInt();
+		int rand = new Random().nextInt(100);
 		tree.createTree(rand);
 		assertNotNull(tree.getHead().getNext());
 		assertNotNull(tree.getHead().getLast());
