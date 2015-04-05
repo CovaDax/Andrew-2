@@ -20,9 +20,9 @@ public class TestA {
 	@Test
 	public void testA(){
 		int id = new Random().nextInt();
-		A a = new A(id);
 		B b = new B(id);
 		C c = new C(id);
+		A a = new A(id, b, c);
 		assertEquals(a.getId(),id);
 
 		a.setNext(b);
