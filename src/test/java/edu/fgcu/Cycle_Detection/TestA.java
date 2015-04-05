@@ -18,22 +18,22 @@ public class TestA {
 	}
 	
 	@Test
-	public void testA(){
-		int id = new Random().nextInt();
+	public void testA(int id, B next, C last){
+		id = new Random().nextInt();
 		A a = new A(id);
-		B b = new B(id);
-		C c = new C(id);
-		a.setNext(b);
-		a.setLast(c);
+		next = new B(id);
+		last = new C(id);
+		a.setNext(next);
+		a.setLast(last);
 		assertEquals(a.getId(),id);
-		assertEquals(a.getNext(),b);
-		assertEquals(a.getLast(),c);
+		assertEquals(a.getNext(),next);
+		assertEquals(a.getLast(),last);
 	}
 	
 	@Test
-	public void testSetId(){
-		int rand = new Random().nextInt();
-		A a = new A(rand);
-		assertEquals(a.getId(), rand);
+	public void testSetId(int id){
+		id = new Random().nextInt();
+		A a = new A(id);
+		assertEquals(a.getId(), id);
 	}
 }
