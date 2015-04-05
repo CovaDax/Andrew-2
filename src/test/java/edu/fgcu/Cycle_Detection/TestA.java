@@ -2,6 +2,8 @@ package edu.fgcu.Cycle_Detection;
 
 import static org.junit.Assert.*;
 
+import java.util.Random;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,9 +18,14 @@ public class TestA {
 	}
 	
 	@Test
-	public void testBCon(){
+	public void testCon(){
+		int id = new Random().nextInt();
 		B b = new B(0);
+		C c = new C(0);
 		a.setNext(b);
-		assertEquals(a.getNext(), b);
+		a.setLast(c);
+		assertEquals(a.getId(),id);
+		assertEquals(a.getNext(),b);
+		assertEquals(a.getLast(),c);
 	}
 }
