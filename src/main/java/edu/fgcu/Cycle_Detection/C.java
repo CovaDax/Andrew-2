@@ -3,16 +3,40 @@ package edu.fgcu.Cycle_Detection;
 
 public class C {
 
-	private A a;
+	private int id;
+	private B last;
+	private A next;
 
-	public C(){
+	public C(int id){
+		this.id = id;
 	}
 	
-	public void setA(A a){
-		this.a = a;
+	public C(int id, A next, B last){
+		this.id = id;
+		this.next = next;
+		this.last = last;
 	}
 	
-	public A getA(){
-		return this.a;
+	public int getId(){
+		return id;
+	}
+	
+	public void setId(int id){
+		this.id = id;
+	}
+	
+	public void setNext(A a){
+		next = a;
+	}
+	
+	public A getNext(){
+		return next;
+	}
+	
+	public void setLast(B b){
+		last = b;
+	}
+	public B getLast(){
+		return last;
 	}
 }
