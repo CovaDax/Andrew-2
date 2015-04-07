@@ -1,24 +1,13 @@
 package edu.fgcu.Cycle_Detection;
 
+import java.util.*;
+import org.jgrapht.*;
+import org.jgrapht.traverse.*;
+
+
 public class CycleDetector {
 	
 
-	public CycleDetector() {
-		
-		
-	}
-	
-	public void DetectCycle() {
-		
-		
-	}
-	
-	
-	public void isCycle() {
-		
-		
-	}
-	
 	public static void main(String [] args){
 		
 		// Main
