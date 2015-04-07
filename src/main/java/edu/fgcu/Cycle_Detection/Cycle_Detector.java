@@ -1,23 +1,24 @@
 package edu.fgcu.Cycle_Detection;
 
 import java.lang.reflect.Field;
-import java.util.Random;
 
-import org.jgraph.JGraph;
-import org.jgrapht.*;
-import org.jgrapht.ext.JGraphModelAdapter;
-import org.jgrapht.graph.*;
+//import java.util.Random;
+//
+//import org.jgraph.JGraph;
+//import org.jgrapht.*;
+//import org.jgrapht.ext.JGraphModelAdapter;
+//import org.jgrapht.graph.*;
 
 
 public class Cycle_Detector {
-	ListenableGraph<String, String> g;
-	
+//	ListenableGraph<String, String> g;
+
 	public Cycle_Detector(String[] classes){
 	     // create a JGraphT graph
-	     g = new ListenableDirectedGraph(DefaultEdge.class);
-	     for(String cycleClass : classes){
-	    	 g.addVertex(cycleClass);	     
-	     }
+//	     g = new ListenableDirectedGraph(DefaultEdge.class);
+//	     for(String cycleClass : classes){
+//	    	 g.addVertex(cycleClass);	     
+//	     }
 	}
 
 	public boolean detectCycle(String head, String className, int count) throws ClassNotFoundException{
