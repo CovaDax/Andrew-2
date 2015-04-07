@@ -21,6 +21,7 @@ public class CycleDetector {
 	
 	public static void main(String [] args){
 		
+		// Main
 		System.out.println("This is a Cycle Detection program!!!");
 		
 	}
