@@ -27,7 +27,7 @@ public class CycleDetectorTest {
 	@Test(expected = RuntimeException.class)
 	public void testExecute() {
 		
-		throw new RuntimeException("msg");
+		//throw new RuntimeException("msg");
 	}
 	
 	
