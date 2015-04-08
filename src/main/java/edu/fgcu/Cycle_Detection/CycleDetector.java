@@ -1,7 +1,9 @@
 package edu.fgcu.Cycle_Detection;
 
 import java.util.*;
+
 import org.jgrapht.*;
+import org.jgrapht.alg.StrongConnectivityInspector;
 import org.jgrapht.traverse.*;
 
 
@@ -63,8 +65,21 @@ public class CycleDetector<V,E> {
                 new StrongConnectivityInspector<V, E>(graph);
             List<Set<V>> components = inspector.stronglyConnectedSets();
             
-            
-    	
+            Set<V> set = new HashSet<V>();
+            for (Set<V> component : components) {
+                if (component.size() > 1) {
+                    // cycle
+                    set.addAll(component);
+                } else {
+                    V v = component.iterator().next();
+                    if (graph.containsEdge(v, v)) {
+                        // self-loop
+                        set.add(v);
+                    }
+                }
+            }
+
+            return set;    	
     }
     
     
