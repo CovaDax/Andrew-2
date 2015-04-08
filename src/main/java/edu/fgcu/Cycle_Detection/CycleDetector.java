@@ -59,7 +59,11 @@ public class CycleDetector<V,E> {
     
     public Set<V> findCycles() {
     	
-    	
+        StrongConnectivityInspector<V, E> inspector =
+                new StrongConnectivityInspector<V, E>(graph);
+            List<Set<V>> components = inspector.stronglyConnectedSets();
+            
+            
     	
     }
     
