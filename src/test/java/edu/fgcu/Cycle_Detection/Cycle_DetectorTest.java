@@ -1,9 +1,13 @@
 package edu.fgcu.Cycle_Detection;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
-import java.util.Random;
+import java.util.Set;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class Cycle_DetectorTest {
@@ -32,11 +36,12 @@ public class Cycle_DetectorTest {
 		Cycle_Detector cd = new Cycle_Detector();
 		cd.createTree("edu.fgcu.Cycle_Detection.A","edu.fgcu.Cycle_Detection.A", 10);
 		assertTrue(cd.detectCycle());
+		assertTrue(cd.detectCycleContaining("A"));
+		Set allCycles = cd.findCycles();
+		assertTrue(allCycles.size() > 0);
+		Set cycles = cd.findCyclesContaining("A");
+		assertTrue(cycles.size() > 0);
 	}
 	
-	@Test (expected = RuntimeException.class)
-	public void testNothing(){
-		throw new RuntimeException("Test");
-	}
 	
 }
