@@ -102,7 +102,6 @@ private class ProbeIterator extends DepthFirstIterator<V, E> {
         path = new ArrayList<V>();
     }
     
-    
     @Override protected void encounterVertexAgain(V vertex, E edge)
     {
         super.encounterVertexAgain(vertex, edge);
