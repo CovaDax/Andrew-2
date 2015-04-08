@@ -18,8 +18,13 @@ public class Cycle_DetectorTest {
 	@Test
 	public void assertNoClass(){
 		Cycle_Detector cd = new Cycle_Detector();
-		assertFalse(cd.createTree(null, null, new Random().nextInt()));
 		assertEquals(cd.getG().edgeSet().size(),0);
+	}
+	
+	@Test
+	public void assertCounter(){
+		Cycle_Detector cd = new Cycle_Detector();
+		assertFalse(cd.createTree(null, null, 0));
 	}
 	
 	@Test (expected = RuntimeException.class)
