@@ -89,8 +89,6 @@ public class CycleDetector<V,E> {
     }
     
 
-    
-    
 private class ProbeIterator extends DepthFirstIterator<V, E> {
    
 	private List<V> path;
