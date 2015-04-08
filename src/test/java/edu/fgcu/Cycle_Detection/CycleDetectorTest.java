@@ -18,5 +18,11 @@ public class CycleDetectorTest {
 		throw new RuntimeException("msg");
 	}
 	
+	@Test(expected = RuntimeException.class)
+	public void testFindCyclesContainingVertex() {
+		
+		throw new RuntimeException("msg");
+	}
+	
 	
 }
