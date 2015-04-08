@@ -1,48 +1,67 @@
 package edu.fgcu.Cycle_Detection;
 
 import java.lang.reflect.Field;
+import java.util.Set;
 
-//import java.util.Random;
-//
-//import org.jgraph.JGraph;
-//import org.jgrapht.*;
-//import org.jgrapht.ext.JGraphModelAdapter;
-//import org.jgrapht.graph.*;
+import org.jgraph.graph.DefaultEdge;
+import org.jgrapht.alg.CycleDetector;
+import org.jgrapht.graph.ListenableDirectedGraph;
 
 
 public class Cycle_Detector {
-//	ListenableGraph<String, String> g;
+	ListenableDirectedGraph<String, String> g;
+	CycleDetector detector;
 
 	public Cycle_Detector(String[] classes){
-	     // create a JGraphT graph
-//	     g = new ListenableDirectedGraph(DefaultEdge.class);
-//	     for(String cycleClass : classes){
-//	    	 g.addVertex(cycleClass);	     
-//	     }
+		g = new ListenableDirectedGraph(DefaultEdge.class);
+		detector = new CycleDetector(g);
 	}
 
-	public boolean detectCycle(String head, String className, int count) throws ClassNotFoundException{
-		Class aClass = Class.forName(className);
+	public boolean createTree(String head, String className, int count) {
+		if(count < 1){
+			return false;
+		}
+			Class aClass;
+			try {
+				aClass = Class.forName(className);
+			} catch (ClassNotFoundException e) {
+				return false;
+			}
+		if(!g.containsVertex(aClass.getSimpleName())){ g.addVertex(aClass.getSimpleName()); };
 		Field[] fields = aClass.getDeclaredFields();
 		for(Field f : fields){
 			Class c = f.getType();
-			if(c.getName().equals(head)){
-				return true;
-			} else if(detectCycle(head,c.getName(), count-1)){
-				return true;
-			} else if(count < 1)
-				return false;
+			if(!g.containsVertex(c.getSimpleName())){ g.addVertex(c.getSimpleName()); };
+				g.addEdge(aClass.getSimpleName(), c.getSimpleName());
+			createTree(head,c.getName(), count-1);
+			
 		}
 		return false;
 	}
-//	
+	
+	public boolean detectCycle(){
+		return detector.detectCycles();
+	}
+	
+	public boolean detectCycleContaining(Object className){
+		return detector.detectCyclesContainingVertex(className);
+	}
+	
+	public Set findCycles(){
+		return detector.findCycles();
+	}
+	
+	public Set findCyclesContaining(Object className){
+		return detector.findCyclesContainingVertex(className);
+	}
+	
 //	@SuppressWarnings("unchecked")
 //	public static void main(String[] args) throws ClassNotFoundException{
 //		String aName = "edu.fgcu.Cycle_Detection.A";
 //		String[] classNames = {	"edu.fgcu.Cycle_Detection.A",
 //								"edu.fgcu.Cycle_Detection.B",
-//								"edu.fgcu.Cycle_Detection.C"};
-//		Cycle_Detector cycle = new Cycle_Detector(classNames);
+//								"edu.fgcu.Cycle_Detection.C" };
+//		Cycle_Detector cycle = new Cycle_Detector();
 ////		
 ////		cycle.testCycle(aName);
 ////		
