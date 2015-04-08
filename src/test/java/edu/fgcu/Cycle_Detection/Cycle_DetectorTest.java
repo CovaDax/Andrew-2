@@ -18,7 +18,7 @@ public class Cycle_DetectorTest {
 	@Test
 	public void assertNoClass(){
 		Cycle_Detector cd = new Cycle_Detector();
-		cd.createTree(null, null, new Random().nextInt());
+		assertFalse(cd.createTree(null, null, new Random().nextInt()));
 		assertEquals(cd.getG().edgeSet().size(),0);
 	}
 	
