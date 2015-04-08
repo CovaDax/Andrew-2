@@ -15,7 +15,9 @@ public class CycleDetector<V,E> {
 	DirectedGraph<V, E> graph;
 	
 	
-	
+    public CycleDetector(DirectedGraph<V, E> graph) {
+        
+    }
 	
 	
 	
