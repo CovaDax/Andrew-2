@@ -23,7 +23,10 @@ public class CycleDetector<V,E> {
     }
 	
 	
-	
+    /**
+     * Performs yes/no cycle detection on the graph
+     */
+    
     public boolean detectCycles() {
 	
     	
