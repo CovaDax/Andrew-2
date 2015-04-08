@@ -73,7 +73,7 @@ public class CycleDetector<V,E> {
                 } else {
                     V v = component.iterator().next();
                     if (graph.containsEdge(v, v)) {
-                        // self-loop
+                     
                         set.add(v);
                     }
                 }
@@ -115,9 +115,6 @@ private class ProbeIterator extends DepthFirstIterator<V, E> {
         int i;
 
         if (root != null) {
-            // For rooted detection, the path must either
-            // double back to the root, or to a node of a cycle
-            // which has already been detected.
             if (vertex.equals(root)) {
                 i = 0;
             } else if ((cycleSet != null) && cycleSet.contains(vertex)) {
