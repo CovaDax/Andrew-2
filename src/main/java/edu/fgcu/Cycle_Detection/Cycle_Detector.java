@@ -9,10 +9,10 @@ import org.jgrapht.graph.ListenableDirectedGraph;
 
 
 public class Cycle_Detector {
-	ListenableDirectedGraph<String, String> g;
-	CycleDetector detector;
+	private ListenableDirectedGraph<String, String> g;
+	private CycleDetector detector;
 
-	public Cycle_Detector(String[] classes){
+	public Cycle_Detector(){
 		g = new ListenableDirectedGraph(DefaultEdge.class);
 		detector = new CycleDetector(g);
 	}
@@ -53,6 +53,14 @@ public class Cycle_Detector {
 	
 	public Set findCyclesContaining(Object className){
 		return detector.findCyclesContainingVertex(className);
+	}
+	
+	public ListenableDirectedGraph getG(){
+		return g;
+	}
+	
+	public CycleDetector getDetector(){
+		return detector;
 	}
 	
 //	@SuppressWarnings("unchecked")
