@@ -24,13 +24,19 @@ public class CycleDetector<V,E> {
 	
 	
 	
+    public boolean detectCycles() {
 	
-	
+    	
+    }
 	
 	
 	
 	
 
+    
+    
+    
+    
 	public static void main(String [] args){
 		
 		System.out.println("This is a Cycle Detection program!!!");
