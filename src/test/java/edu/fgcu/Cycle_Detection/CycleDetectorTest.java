@@ -24,5 +24,11 @@ public class CycleDetectorTest {
 		throw new RuntimeException("msg");
 	}
 	
+	@Test(expected = RuntimeException.class)
+	public void testExecute() {
+		
+		throw new RuntimeException("msg");
+	}
+	
 	
 }
