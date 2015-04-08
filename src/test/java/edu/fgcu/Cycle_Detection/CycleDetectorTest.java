@@ -15,7 +15,7 @@ public class CycleDetectorTest {
 	@Test(expected = RuntimeException.class)
 	public void testFindCycles() {
 		
-		throw new RuntimeException("msg");
+		//throw new RuntimeException("msg");
 	}
 	
 	@Test(expected = RuntimeException.class)
