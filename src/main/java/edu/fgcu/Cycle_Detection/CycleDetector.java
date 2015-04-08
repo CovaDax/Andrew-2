@@ -5,11 +5,23 @@ import org.jgrapht.*;
 import org.jgrapht.traverse.*;
 
 
-public class CycleDetector {
+public class CycleDetector<V,E> {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 	public static void main(String [] args){
-		
 		
 		System.out.println("This is a Cycle Detection program!!!");
 		
