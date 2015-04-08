@@ -2,6 +2,8 @@ package edu.fgcu.Cycle_Detection;
 
 import static org.junit.Assert.*;
 
+import java.util.Random;
+
 import org.junit.Test;
 
 public class Cycle_DetectorTest {
@@ -12,6 +14,14 @@ public class Cycle_DetectorTest {
 		assertNotNull(cd.getDetector());
 		assertNotNull(cd.getG());
 	}
+	
+	@Test
+	public void assertNoClass(){
+		Cycle_Detector cd = new Cycle_Detector();
+		cd.createTree(null, null, new Random().nextInt());
+		assertEquals(cd.getG().edgeSet().size(),0);
+	}
+	
 	@Test (expected = RuntimeException.class)
 	public void testNothing(){
 		throw new RuntimeException("Test");
