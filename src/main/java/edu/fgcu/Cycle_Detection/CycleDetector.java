@@ -101,6 +101,19 @@ public class CycleDetector<V,E> {
     }
     
     
+private class ProbeIterator extends DepthFirstIterator<V, E>
+{
+    private List<V> path;
+    private Set<V> cycleSet;
+    private V root;
+
+    ProbeIterator(Set<V> cycleSet, V startVertex)
+    {
+        super(graph, startVertex);
+        root = startVertex;
+        this.cycleSet = cycleSet;
+        path = new ArrayList<V>();
+    }
     
     
     
@@ -110,8 +123,7 @@ public class CycleDetector<V,E> {
     
     
     
-    
-    
+}   
     
     
     
