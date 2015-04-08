@@ -52,6 +52,11 @@ public class CycleDetector<V,E> {
     }
 	
 
+    /*
+     * Finds the vertex set of a subgraph
+     * 
+     */
+    
     public Set<V> findCycles() {
     	
     	
