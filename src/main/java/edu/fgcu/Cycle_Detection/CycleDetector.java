@@ -132,7 +132,12 @@ private class ProbeIterator extends DepthFirstIterator<V, E> {
         if (i > -1) {
             if (cycleSet == null) {
                 // we're doing yes/no cycle detection
-                throw new CycleDetectedException();
+                try {
+					throw new Exception();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             } else {
                 for (; i < path.size(); ++i) {
                     cycleSet.add(path.get(i));
