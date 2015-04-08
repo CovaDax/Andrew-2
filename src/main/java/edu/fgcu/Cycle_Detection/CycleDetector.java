@@ -40,7 +40,6 @@ public class CycleDetector<V,E> {
         return false;
     }
 	
-	
     /*
      *  Execute probeIterator
      */
@@ -161,6 +160,7 @@ private class ProbeIterator extends DepthFirstIterator<V, E> {
 
         return v;
     }
+    
 }
     
     
