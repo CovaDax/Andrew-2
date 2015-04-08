@@ -3,8 +3,8 @@ package edu.fgcu.Cycle_Detection;
 import java.lang.reflect.Field;
 import java.util.Set;
 
-import org.jgraph.graph.DefaultEdge;
 import org.jgrapht.alg.CycleDetector;
+import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.ListenableDirectedGraph;
 
 
