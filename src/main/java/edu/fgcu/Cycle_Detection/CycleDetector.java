@@ -10,7 +10,7 @@ public class CycleDetector {
 
 	public static void main(String [] args){
 		
-		// This is Main Class
+		// This is Main Class Class
 		System.out.println("This is a Cycle Detection program!!!");
 		
 	}
