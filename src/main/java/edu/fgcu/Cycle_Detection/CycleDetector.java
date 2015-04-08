@@ -9,7 +9,6 @@ import org.jgrapht.traverse.*;
 
 public class CycleDetector<V,E> {
 	
-	
 	/*
 	 * Graph object where cycle detection is performed
 	 */
