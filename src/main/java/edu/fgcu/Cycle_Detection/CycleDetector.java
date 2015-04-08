@@ -84,7 +84,12 @@ public class CycleDetector<V,E> {
     
     
     
-    
+    public Set<V> findCyclesContainingVertex(V v) {
+        Set<V> set = new HashSet<V>();
+        execute(set, v);
+
+        return set;
+    }
     
     
     
