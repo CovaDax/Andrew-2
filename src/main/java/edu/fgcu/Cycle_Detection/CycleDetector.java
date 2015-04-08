@@ -28,8 +28,14 @@ public class CycleDetector<V,E> {
      */
     
     public boolean detectCycles() {
-	
     	
+        try {
+            execute(null, null);
+        } catch (CycleDetectedException ex) {
+            return true;
+        }
+
+        return false;
     }
 	
 	
