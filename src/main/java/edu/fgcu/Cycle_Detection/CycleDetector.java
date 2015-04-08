@@ -151,7 +151,7 @@ private class ProbeIterator extends DepthFirstIterator<V, E> {
     {
         V v = super.provideNextVertex();
 
-        // backtrack
+        
         for (int i = path.size() - 1; i >= 0; --i) {
             if (graph.containsEdge(path.get(i), v)) {
                 break;
@@ -166,8 +166,6 @@ private class ProbeIterator extends DepthFirstIterator<V, E> {
     }
 }
     
-    
-   	
     
 	public static void main(String [] args){
 		
