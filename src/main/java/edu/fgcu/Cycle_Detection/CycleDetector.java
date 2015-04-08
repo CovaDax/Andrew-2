@@ -7,7 +7,8 @@ import org.jgrapht.traverse.*;
 
 public class CycleDetector<V,E> {
 	
-	
+
+	DirectedGraph<V, E> graph;
 	
 	
 	
