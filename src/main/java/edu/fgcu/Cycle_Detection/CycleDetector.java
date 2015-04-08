@@ -23,7 +23,7 @@ public class CycleDetector<V,E> {
     }
 	
 	
-    /**
+    /*
      * Performs yes/no cycle detection on the graph
      */
     
@@ -52,6 +52,31 @@ public class CycleDetector<V,E> {
     }
 	
 
+    public Set<V> findCycles() {
+    	
+    	
+    	
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
