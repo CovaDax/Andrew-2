@@ -33,7 +33,7 @@ public class CycleDetector<V,E> {
     	
         try {
             execute(null, null);
-        } catch (CycleDetectedException ex) {
+        } catch (Exception ex) {
             return true;
         }
 
@@ -91,14 +91,7 @@ public class CycleDetector<V,E> {
         return set;
     }
     
-    private void execute(Set<V> s, V v) {
-    	
-        ProbeIterator iter = new ProbeIterator(s, v);
 
-        while (iter.hasNext()) {
-            iter.next();
-        }
-    }
     
     
 private class ProbeIterator extends DepthFirstIterator<V, E> {
