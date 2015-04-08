@@ -16,15 +16,22 @@ public class Cycle_DetectorTest {
 	}
 	
 	@Test
-	public void assertNoClass(){
+	public void testNoClass(){
 		Cycle_Detector cd = new Cycle_Detector();
 		assertEquals(cd.getG().edgeSet().size(),0);
 	}
 	
 	@Test
-	public void assertCounter(){
+	public void testCounter(){
 		Cycle_Detector cd = new Cycle_Detector();
 		assertFalse(cd.createTree(null, null, 0));
+	}
+	
+	@Test
+	public void testTree(){
+		Cycle_Detector cd = new Cycle_Detector();
+		cd.createTree("edu.fgcu.Cycle_Detection.A","edu.fgcu.Cycle_Detection.A", 10);
+		assertTrue(cd.detectCycle());
 	}
 	
 	@Test (expected = RuntimeException.class)
