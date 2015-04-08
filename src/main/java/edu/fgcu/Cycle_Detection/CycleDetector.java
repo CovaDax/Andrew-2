@@ -91,6 +91,14 @@ public class CycleDetector<V,E> {
         return set;
     }
     
+    private void execute(Set<V> s, V v) {
+        ProbeIterator iter = new ProbeIterator(s, v);
+
+        while (iter.hasNext()) {
+            iter.next();
+        }
+    }
+    
     
     
     
