@@ -39,6 +39,9 @@ public class CycleDetector<V,E> {
     }
 	
 	
+    /*
+     *  Execute probeIterator
+     */
     
     private void execute(Set<V> s, V v) {
         ProbeIterator iter = new ProbeIterator(s, v);
