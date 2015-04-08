@@ -9,14 +9,17 @@ public class CycleDetector<V,E> {
 	
 	/*
 	 * Graph object where cycle detection is performed
-	 * 
 	 */
 	
 	DirectedGraph<V, E> graph;
 	
+	/*
+	 * Cycle detector for the specified graph
+	 */
 	
     public CycleDetector(DirectedGraph<V, E> graph) {
-        
+    	
+    	this.graph = graph;
     }
 	
 	
