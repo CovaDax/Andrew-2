@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.fgcu</groupId>
-  <artifactId>median-finder</artifactId>
+  <artifactId>circular-dependency</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>median-finder</name>
+  <name>circular-class=dependency</name>
   <url>http://maven.apache.org</url>
   <dependencies>
       <dependency>
@@ -19,7 +19,12 @@
       	<artifactId>easymock</artifactId>
       	<version>3.2</version>
       </dependency>
-    </dependencies>
+      <dependency>
+      	<groupId>jgrapht</groupId>
+      	<artifactId>jgrapht</artifactId>
+      	<version>0.7.3</version>
+      </dependency>
+  </dependencies>
 
   
   <build>

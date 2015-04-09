@@ -23,11 +23,15 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Meyers/Desktop/jgrapht-0.9.1/lib/jgraph-5.13.0.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Meyers/Desktop/jgrapht-0.9.1/lib/jgrapht-core-0.9.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Meyers/Desktop/jgrapht-0.9.1/lib/jgrapht-demo-0.9.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Meyers/Desktop/jgrapht-0.9.1/lib/jgrapht-ext-0.9.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Meyers/Desktop/jgrapht-0.9.1/lib/jgrapht-ext-0.9.1-uber.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Meyers/Desktop/jgrapht-0.9.1/lib/jgraphx-2.0.0.1.jar"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jGraphT"/>
+>>>>>>> f034bbfab7cead99985918cbc149643e8b8e87ad
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
