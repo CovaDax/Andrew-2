@@ -28,19 +28,14 @@ public class Cycle_DetectorTest {
 	@Test
 	public void testCounter(){
 		Cycle_Detector cd = new Cycle_Detector();
-		assertFalse(cd.createTree(null, null, 0));
+		assertFalse(cd.createTree(null, 0));
 	}
 	
 	@Test
 	public void testTree(){
 		Cycle_Detector cd = new Cycle_Detector();
-		cd.createTree("edu.fgcu.Cycle_Detection.A","edu.fgcu.Cycle_Detection.A", 10);
-		assertTrue(cd.detectCycle());
-		assertTrue(cd.detectCycleContaining("A"));
-		Set allCycles = cd.findCycles();
-		assertTrue(allCycles.size() > 0);
-		Set cycles = cd.findCyclesContaining("A");
-		assertTrue(cycles.size() > 0);
+		cd.createTree("edu.fgcu.Cycle_Detection.A", 10);
+		assertTrue(cd.getG().edgeSet().isEmpty());
 	}
 	
 	

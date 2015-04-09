@@ -9,7 +9,7 @@ import org.jgrapht.graph.ListenableDirectedGraph;
 
 
 public class Cycle_Detector {
-	private ListenableDirectedGraph<String, String> g;
+	private ListenableDirectedGraph g;
 	private CycleDetector detector;
 
 	public Cycle_Detector(){
@@ -17,26 +17,29 @@ public class Cycle_Detector {
 		detector = new CycleDetector(g);
 	}
 
-	public boolean createTree(String head, String className, int count) {
+	public boolean createTree(String className, int count) {
 		if(count < 1){
 			return false;
 		}
-			Class aClass;
-			try {
-				aClass = Class.forName(className);
-			} catch (ClassNotFoundException e) {
-				return false;
-			}
-		if(!g.containsVertex(aClass.getSimpleName())){ g.addVertex(aClass.getSimpleName()); };
+		Class aClass;
+		try {
+			aClass = Class.forName(className);
+		} catch (ClassNotFoundException e) {
+			return false;
+		}
 		Field[] fields = aClass.getDeclaredFields();
 		for(Field f : fields){
 			Class c = f.getType();
-			if(!g.containsVertex(c.getSimpleName())){ g.addVertex(c.getSimpleName()); };
-				g.addEdge(aClass.getSimpleName(), c.getSimpleName());
-			createTree(head,c.getName(), count-1);
-			
+			addEdge(aClass.getSimpleName(), c.getSimpleName());
+			createTree(c.getName(), count-1);
 		}
 		return false;
+	}
+	
+	public void addEdge(Object start, Object end){
+		if(!g.containsVertex(start)){ g.addVertex(start); }
+		if(!g.containsVertex(end)){ g.addVertex(end); }
+		g.addEdge(start, end);
 	}
 	
 	public boolean detectCycle(){
