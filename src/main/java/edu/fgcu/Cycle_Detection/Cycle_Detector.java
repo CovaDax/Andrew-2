@@ -23,12 +23,12 @@ public class Cycle_Detector {
 		try {
 			aClass = Class.forName(className);
 		} catch (ClassNotFoundException e) {
-			//return false;
+			
 		}
 		Field[] fields = aClass.getDeclaredFields();
 		for(Field f : fields){
 			Class c = f.getType();
-			addEdge(aClass.getSimpleName(), c.getSimpleName());
+			addEdge(aClass.getName(), c.getName());
 			//createTree(c.getName(), count-1);
 		}
 		//return false;
@@ -64,19 +64,18 @@ public class Cycle_Detector {
 		return detector;
 	}
 	
-//	@SuppressWarnings("unchecked")
-//	public static void main(String[] args) throws ClassNotFoundException{
-//		String aName = "edu.fgcu.Cycle_Detection.A";
-//		String[] classNames = {	"edu.fgcu.Cycle_Detection.A",
-//								"edu.fgcu.Cycle_Detection.B",
-//								"edu.fgcu.Cycle_Detection.C" };
-//		Cycle_Detector cycle = new Cycle_Detector();
-//		for(String className : classNames){
-//			cycle.createTree(className);
-//		}
-//		
-//		System.out.println(cycle.findCycles());
-////		cycle.testCycle(aName);
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		String aName = "edu.fgcu.Cycle_Detection.A";
+		String[] classNames = {	"edu.fgcu.Cycle_Detection.A",
+								"edu.fgcu.Cycle_Detection.B",
+								"edu.fgcu.Cycle_Detection.C" };
+		Cycle_Detector cycle = new Cycle_Detector();
+		for(String className : classNames){
+			cycle.createTree(className);
+		}
+	
+//			cycle.testCycle(aName);
 ////		
 ////		ListenableGraph g = cycle.getGraph();
 ////		if(g.containsEdge(aName, aName)){
@@ -86,5 +85,5 @@ public class Cycle_Detector {
 ////		if(g.containsEdge(aName, bName) && g.containsEdge(bName, aName)){
 ////			System.out.println("A->B B<-A Cycle Detected");
 ////		}
-//	}
+	}
 }
