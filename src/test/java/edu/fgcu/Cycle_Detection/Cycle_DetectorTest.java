@@ -42,16 +42,20 @@ public class Cycle_DetectorTest {
 	public void testDetectCycle(){
 		Cycle_Detector cd = new Cycle_Detector();
 		cd.createTree("edu.fgcu.Cycle_Detection.A");
-		assertNotNull(cd.detectCycle());
-		assertNotNull(cd.detectCycleContaining("edu.fgcu.Cycle_Detection.A"));
+		cd.createTree("edu.fgcu.Cycle_Detection.B");
+		cd.createTree("edu.fgcu.Cycle_Detection.C");
+		assertTrue(cd.detectCycle());
+		//assertTrue(cd.detectCycleContaining("edu.fgcu.Cycle_Detection.A"));
 	}
 	
 	@Test
 	public void testFindCycle(){
 		Cycle_Detector cd = new Cycle_Detector();
 		cd.createTree("edu.fgcu.Cycle_Detection.A");
+		cd.createTree("edu.fgcu.Cycle_Detection.B");
+		cd.createTree("edu.fgcu.Cycle_Detection.C");
 		assertNotNull(cd.findCycles());
-		assertNotNull(cd.findCyclesContaining("edu.fgcu.Cycle_Detection.A"));
+		//assertNotNull(cd.findCyclesContaining("edu.fgcu.Cycle_Detection.A"));
 	}
 	
 	
