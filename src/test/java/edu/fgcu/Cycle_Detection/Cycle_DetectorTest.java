@@ -29,7 +29,7 @@ public class Cycle_DetectorTest {
 	public void testTree(){
 		Cycle_Detector cd = new Cycle_Detector();
 		cd.createTree("edu.fgcu.Cycle_Detection.A");
-		assertTrue(cd.getG().edgeSet().isEmpty());
+		assertTrue(!cd.getG().edgeSet().isEmpty());
 	}
 	
 	
