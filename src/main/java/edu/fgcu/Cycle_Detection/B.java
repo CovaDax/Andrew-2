@@ -5,7 +5,7 @@ public class B {
 	
 
 	private C c;
-	private A a;
+//	private A a;
 
 	public B(int id){
 	}
