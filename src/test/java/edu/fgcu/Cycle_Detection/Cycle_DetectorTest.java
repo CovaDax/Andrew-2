@@ -32,5 +32,11 @@ public class Cycle_DetectorTest {
 		assertTrue(!cd.getG().edgeSet().isEmpty());
 	}
 	
+	@Test(expected=NullPointerException.class)
+	public void testClassNotExist(){
+		Cycle_Detector cd = new Cycle_Detector();
+		cd.createTree("This.is.not.a.class");
+	}
+	
 	
 }
