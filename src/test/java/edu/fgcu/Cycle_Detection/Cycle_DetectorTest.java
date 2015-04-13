@@ -38,5 +38,21 @@ public class Cycle_DetectorTest {
 		cd.createTree("This.is.not.a.class");
 	}
 	
+	@Test
+	public void testDetectCycle(){
+		Cycle_Detector cd = new Cycle_Detector();
+		cd.createTree("edu.fgcu.Cycle_Detection.A");
+		assertNotNull(cd.detectCycle());
+		assertNotNull(cd.detectCycleContaining("edu.fgcu.Cycle_Detection.A"));
+	}
+	
+	@Test
+	public void testFindCycle(){
+		Cycle_Detector cd = new Cycle_Detector();
+		cd.createTree("edu.fgcu.Cycle_Detection.A");
+		assertNotNull(cd.findCycles());
+		assertNotNull(cd.findCyclesContaining("edu.fgcu.Cycle_Detection.A"));
+	}
+	
 	
 }
