@@ -24,23 +24,38 @@ public class Cycle_DetectorTest {
 		Cycle_Detector cd = new Cycle_Detector();
 		assertEquals(cd.getG().edgeSet().size(),0);
 	}
-	
-	@Test
-	public void testCounter(){
-		Cycle_Detector cd = new Cycle_Detector();
-		assertFalse(cd.createTree(null, null, 0));
-	}
-	
+		
 	@Test
 	public void testTree(){
 		Cycle_Detector cd = new Cycle_Detector();
-		cd.createTree("edu.fgcu.Cycle_Detection.A","edu.fgcu.Cycle_Detection.A", 10);
+		cd.createTree("edu.fgcu.Cycle_Detection.A");
+		assertTrue(!cd.getG().edgeSet().isEmpty());
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void testClassNotExist(){
+		Cycle_Detector cd = new Cycle_Detector();
+		cd.createTree("This.is.not.a.class");
+	}
+	
+	@Test
+	public void testDetectCycle(){
+		Cycle_Detector cd = new Cycle_Detector();
+		cd.createTree("edu.fgcu.Cycle_Detection.A");
+		cd.createTree("edu.fgcu.Cycle_Detection.B");
+		cd.createTree("edu.fgcu.Cycle_Detection.C");
 		assertTrue(cd.detectCycle());
-		assertTrue(cd.detectCycleContaining("A"));
-		Set allCycles = cd.findCycles();
-		assertTrue(allCycles.size() > 0);
-		Set cycles = cd.findCyclesContaining("A");
-		assertTrue(cycles.size() > 0);
+		assertTrue(cd.detectCycleContaining("edu.fgcu.Cycle_Detection.A"));
+	}
+	
+	@Test
+	public void testFindCycle(){
+		Cycle_Detector cd = new Cycle_Detector();
+		cd.createTree("edu.fgcu.Cycle_Detection.A");
+		cd.createTree("edu.fgcu.Cycle_Detection.B");
+		cd.createTree("edu.fgcu.Cycle_Detection.C");
+		assertNotNull(cd.findCycles());
+		assertNotNull(cd.findCyclesContaining("edu.fgcu.Cycle_Detection.A"));
 	}
 	
 	

@@ -9,7 +9,7 @@ import org.jgrapht.graph.ListenableDirectedGraph;
 
 
 public class Cycle_Detector {
-	private ListenableDirectedGraph<String, String> g;
+	private ListenableDirectedGraph g;
 	private CycleDetector detector;
 
 	public Cycle_Detector(){
@@ -17,26 +17,27 @@ public class Cycle_Detector {
 		detector = new CycleDetector(g);
 	}
 
-	public boolean createTree(String head, String className, int count) {
-		if(count < 1){
-			return false;
+	public void createTree(String className) {
+
+		Class aClass = null;
+		try {
+			aClass = Class.forName(className);
+		} catch (ClassNotFoundException e) {
+			
 		}
-			Class aClass;
-			try {
-				aClass = Class.forName(className);
-			} catch (ClassNotFoundException e) {
-				return false;
-			}
-		if(!g.containsVertex(aClass.getSimpleName())){ g.addVertex(aClass.getSimpleName()); };
 		Field[] fields = aClass.getDeclaredFields();
 		for(Field f : fields){
 			Class c = f.getType();
-			if(!g.containsVertex(c.getSimpleName())){ g.addVertex(c.getSimpleName()); };
-				g.addEdge(aClass.getSimpleName(), c.getSimpleName());
-			createTree(head,c.getName(), count-1);
-			
+			addEdge(aClass.getName(), c.getName());
+			//createTree(c.getName(), count-1);
 		}
-		return false;
+		//return false;
+	}
+	
+	public void addEdge(Object start, Object end){
+		if(!g.containsVertex(start)){ g.addVertex(start); }
+		if(!g.containsVertex(end)){ g.addVertex(end); }
+		g.addEdge(start, end);
 	}
 	
 	public boolean detectCycle(){
@@ -64,28 +65,14 @@ public class Cycle_Detector {
 	}
 	
 //	@SuppressWarnings("unchecked")
-//	public static void main(String[] args) throws ClassNotFoundException{
+//	public static void main(String[] args) {
 //		String aName = "edu.fgcu.Cycle_Detection.A";
 //		String[] classNames = {	"edu.fgcu.Cycle_Detection.A",
 //								"edu.fgcu.Cycle_Detection.B",
 //								"edu.fgcu.Cycle_Detection.C" };
 //		Cycle_Detector cycle = new Cycle_Detector();
-////		
-////		cycle.testCycle(aName);
-////		
-////		ListenableGraph g = cycle.getGraph();
-////		if(g.containsEdge(aName, aName)){
-////			System.out.println("Reflective Cycle Detected");
-////		} 
-////		
-////		if(g.containsEdge(aName, bName) && g.containsEdge(bName, aName)){
-////			System.out.println("A->B B<-A Cycle Detected");
-////		}
-//		
-//		if(cycle.detectCycle(aName, aName, 10)){
-//			System.out.println("Cycle Detected");
-//		} else {
-//			System.out.println("Cycle Not Detected");
+//		for(String className : classNames){
+//			cycle.createTree(className);
 //		}
 //	}
 }
