@@ -64,18 +64,18 @@ public class Cycle_Detector {
 		return detector;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public static void main(String[] args) {
-		String aName = "edu.fgcu.Cycle_Detection.A";
-		String[] classNames = {	"edu.fgcu.Cycle_Detection.A",
-								"edu.fgcu.Cycle_Detection.B",
-								"edu.fgcu.Cycle_Detection.C" };
-		Cycle_Detector cycle = new Cycle_Detector();
-		for(String className : classNames){
-			cycle.createTree(className);
-		}
-		
-		System.out.println(cycle.findCycles());
-		cycle.getG();
-	}
+//	@SuppressWarnings("unchecked")
+//	public static void main(String[] args) {
+//		String aName = "edu.fgcu.Cycle_Detection.A";
+//		String[] classNames = {	"edu.fgcu.Cycle_Detection.A",
+//								"edu.fgcu.Cycle_Detection.B",
+//								"edu.fgcu.Cycle_Detection.C" };
+//		Cycle_Detector cycle = new Cycle_Detector();
+//		for(String className : classNames){
+//			cycle.createTree(className);
+//		}
+//		
+//		System.out.println(cycle.findCycles());
+//		cycle.getG();
+//	}
 }
