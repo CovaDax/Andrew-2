@@ -1,9 +1,13 @@
 package edu.fgcu.Cycle_Detection;
 
+import java.awt.List;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Set;
 
 import org.jgrapht.alg.CycleDetector;
+import org.jgrapht.alg.KShortestPaths;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.ListenableDirectedGraph;
 
@@ -76,7 +80,8 @@ public class Cycle_Detector {
 //		}
 //		
 //		if(cycle.detectCycleContaining(aName)){
-//			Set edgeSet = cycle.getG().edgesOf(aName);
+//			//Set edgeSet = cycle.getG().edgesOf(aName);
+//			Set edgeSet = cycle.getG().edgeSet();
 //			for(Object edge : edgeSet){
 //				System.out.println(edge);
 //			}
