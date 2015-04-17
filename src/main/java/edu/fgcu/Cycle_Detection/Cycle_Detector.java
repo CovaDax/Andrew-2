@@ -75,7 +75,11 @@ public class Cycle_Detector {
 //			cycle.createTree(className);
 //		}
 //		
-//		System.out.println(cycle.findCycles());
-//		cycle.getG();
+//		if(cycle.detectCycleContaining(aName)){
+//			Set edgeSet = cycle.getG().edgesOf(aName);
+//			for(Object edge : edgeSet){
+//				System.out.println(edge);
+//			}
+//		}
 //	}
 }
