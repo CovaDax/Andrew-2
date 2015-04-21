@@ -58,5 +58,16 @@ public class Cycle_DetectorTest {
 		assertNotNull(cd.findCyclesContaining("A"));
 	}
 	
+	@Test
+	public void testABC(){
+		A a = new A();
+		B b = new B();
+		C c = new C();
+		assertNotNull(a);
+		assertNotNull(b);
+		assertNotNull(c);
+		
+	}
+	
 	
 }
