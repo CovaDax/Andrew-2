@@ -45,7 +45,7 @@ public class Cycle_DetectorTest {
 		cd.createTree("edu.fgcu.Cycle_Detection.B");
 		cd.createTree("edu.fgcu.Cycle_Detection.C");
 		assertTrue(cd.detectCycle());
-		assertFalse(cd.detectCycleContaining("A"));
+		assertTrue(cd.detectCycleContaining("A"));
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
