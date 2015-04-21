@@ -32,10 +32,8 @@ public class Cycle_Detector {
 		Field[] fields = aClass.getDeclaredFields();
 		for(Field f : fields){
 			Class c = f.getType();
-			addEdge(aClass.getName(), c.getName());
-			//createTree(c.getName(), count-1);
+			addEdge(aClass.getSimpleName(), c.getSimpleName());
 		}
-		//return false;
 	}
 	
 	public void addEdge(Object start, Object end){
@@ -67,24 +65,5 @@ public class Cycle_Detector {
 	public CycleDetector getDetector(){
 		return detector;
 	}
-	
-//	@SuppressWarnings("unchecked")
-//	public static void main(String[] args) {
-//		String aName = "edu.fgcu.Cycle_Detection.A";
-//		String[] classNames = {	"edu.fgcu.Cycle_Detection.A",
-//								"edu.fgcu.Cycle_Detection.B",
-//								"edu.fgcu.Cycle_Detection.C" };
-//		Cycle_Detector cycle = new Cycle_Detector();
-//		for(String className : classNames){
-//			cycle.createTree(className);
-//		}
-//		
-//		if(cycle.detectCycleContaining(aName)){
-//			//Set edgeSet = cycle.getG().edgesOf(aName);
-//			Set edgeSet = cycle.getG().edgeSet();
-//			for(Object edge : edgeSet){
-//				System.out.println(edge);
-//			}
-//		}
-//	}
+
 }
