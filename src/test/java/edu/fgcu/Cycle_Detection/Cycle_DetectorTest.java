@@ -55,7 +55,7 @@ public class Cycle_DetectorTest {
 		cd.createTree("edu.fgcu.Cycle_Detection.B");
 		cd.createTree("edu.fgcu.Cycle_Detection.C");
 		assertNotNull(cd.findCycles());
-		assertNotNull(cd.findCyclesContaining("A"));
+		//assertNotNull(cd.findCyclesContaining("A"));
 	}
 	
 	
