@@ -65,5 +65,14 @@ public class Cycle_Detector {
 	public CycleDetector getDetector(){
 		return detector;
 	}
+	
+	public static void main(String[] args){
+		Cycle_Detector c = new Cycle_Detector();
+		c.createTree("edu.fgcu.Cycle_Detection.A");
+		c.createTree("edu.fgcu.Cycle_Detection.B");
+		c.createTree("edu.fgcu.Cycle_Detection.C");
+		System.out.println(c.detectCycleContaining("A"));
+		System.out.println(c.findCyclesContaining("A"));
+	}
 
 }
